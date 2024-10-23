@@ -1,21 +1,3 @@
-import subprocess
-import sys
-
-# Function to install a package if it is not already installed
-def install(package):
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
-
-# List of required packages
-required_packages = ['requests', 'beautifulsoup4']
-
-# Check and install missing packages
-for package in required_packages:
-    try:
-        __import__(package)
-    except ImportError:
-        print(f"{package} not found. Installing...")
-        install(package)
-
 import requests
 from bs4 import BeautifulSoup
 
